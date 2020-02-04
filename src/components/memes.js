@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import Footer from './footer';
-import Pic from './../assets/images/team-1.jpg';
+import Pic from './../assets/images/back6.jpg';
 import DotLoader from "react-spinners/DotLoader";
 import Pagination from "react-js-pagination";
 
@@ -95,11 +95,19 @@ export default class memes extends Component {
             const listmeme = all_memes.map((meme) =>
             <div className="row">
             <div className="col-md-12">
-            <div className="card mb-2">
+            {/* <div className="card mb-2">
             <div className="p-3">
-        <p className="card-text">{meme.joke}</p>
+                 <p className="card-text p-2">{meme.joke}</p>
             </div>
-        </div>
+        </div> */}
+        <div className="card  text-white mb-2">
+  <img className="card-img" src={Pic} alt="Card image"/>
+  <div className="card-img-overlay">
+    <h5 className="card-title pt-4 p-md-5">{meme.joke}</h5>
+    {/* <p className="card-text d-flex justify-content-center">{meme.joke}</p> */}
+    {/* <p className="card-text"></p> */}
+  </div>
+</div>
             </div>
   </div>
           );
