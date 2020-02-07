@@ -10,16 +10,15 @@ export default class memes extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            all_memes:[],
-            loading:true,
-            error:null,
-            activePage: 1,
+          all_memes:[],
+          loading:true,
+          error:null,
+          activePage: 1,
           itemsCountPerPage:1,
           totalItemsCount:1
         };
         this.handlePageChange= this.handlePageChange.bind(this);
       }
-
       get_http_data(){
         fetch(`https://icanhazdadjoke.com/search`,
         {
@@ -68,7 +67,7 @@ export default class memes extends Component {
           this.get_http_data();
        }
     render() {
-        const { error, loading, all_memes } = this.state;
+        const { error,loading,all_memes} = this.state;
         if (error) {
           return (
             <div>
@@ -91,41 +90,34 @@ export default class memes extends Component {
                 </div>
               )
         } else {
-
             const listmeme = all_memes.map((meme) =>
-            <div className="row">
-            <div className="col-md-12">
-            {/* <div className="card mb-2">
+            <div className="col-md-6">
+            <div className="card mb-2">
             <div className="p-3">
-                 <p className="card-text p-2">{meme.joke}</p>
+              <p className="card-text p-2">{meme.joke}</p>
             </div>
-        </div> */}
-        <div className="card  text-white mb-2">
-  <img className="card-img" src={Pic} alt="Card image"/>
-  <div className="card-img-overlay">
-    <h5 className="card-title pt-4 p-md-5">{meme.joke}</h5>
-    {/* <p className="card-text d-flex justify-content-center">{meme.joke}</p> */}
-    {/* <p className="card-text"></p> */}
-  </div>
-</div>
             </div>
-  </div>
+            </div>
           );
           return (
       <div>
             <Header/>
-            <div className='container-fluid memes_card'>{listmeme}</div>
+            <div className="row memes_card ">
+            {listmeme}
+             
+            </div>
+
             <div className="d-flex justify-content-center">
-            <Pagination
-          activePage={this.state.activePage}
-          itemsCountPerPage={20}
-          totalItemsCount={450}
-          pageRangeDisplayed={7}
-          onChange={this.handlePageChange}
-          itemClass='page-item'
-          linkClass='page-link'
-        />
-     </div>
+              <Pagination
+              activePage={this.state.activePage}
+              itemsCountPerPage={20}
+              totalItemsCount={450}
+              pageRangeDisplayed={7}
+              onChange={this.handlePageChange}
+              itemClass='page-item'
+              linkClass='page-link'
+              />
+            </div>
      </div>
           );
         }
