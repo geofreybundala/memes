@@ -33,7 +33,7 @@ export default class header extends Component {
         <ul className="navbar-nav ml-auto">
 
           <li className="nav-item active">
-            <a className="nav-link" href="https://nusasatu.com">Home
+            <a className="nav-link">Home
               <span className="sr-only">(current)</span>
             </a>
           </li>
