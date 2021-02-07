@@ -56,24 +56,6 @@ export default class header extends Component {
     </div>
   </nav>
 </div>
-        //     <header id="header">
-        //     <div className="container">
-        //     <div id="logo" className="pull-left">
-        //         {/* <a href=""><img src="img/logo.png" alt="" title="" /></a> */}
-        //         <h2 >memes</h2>
-        //     </div>
-        //     <nav id="nav-menu-container">
-        //         <ul className="nav-menu">
-        //         <li className="menu-active"><Link to="/">Home</Link></li>
-        //         <li><a href="">About Us</a></li>
-              
-        //         <li><a href="">Team</a></li>
-             
-        //         <li><a href="">Contact Us</a></li>
-        //         </ul>
-        //     </nav>
-        //     </div>
-        // </header>
         )
     }
 }
