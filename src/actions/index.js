@@ -8,3 +8,11 @@ export const randomAction =()=>{
 }
 
 
+export const allMemeAction=(page=1)=>{
+        return async dispatch=>{
+            const response = await memesAPIs.get(`/search?page=${page}`)
+            dispatch({type:'GET_MEMES',payload:response.data})
+        }
+}
+
+

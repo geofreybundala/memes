@@ -1,15 +1,10 @@
 import {combineReducers} from 'redux'
+import {randomReducer} from './randomMemesReducer'
+import {getMemesReducer} from './allMemesReducer'
 
 
-export const randomReducer = (state=[],action)=>{
-    switch(action.type){
-        case 'RANDOM_MEME':
-            return [...state,action.payload];
-        default: 
-          return state 
-    }
-}
 
 export default combineReducers({
-    random:randomReducer
+    random:randomReducer,
+    memes:getMemesReducer
 })

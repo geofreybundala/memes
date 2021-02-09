@@ -12,7 +12,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'font-awesome/css/font-awesome.min.css';
 import { Route,  BrowserRouter as Router,Switch } from 'react-router-dom';
 
-import Memes from './components/memes';
+import Memes from './components/Memes';
 import {Provider} from 'react-redux'
 import {createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
