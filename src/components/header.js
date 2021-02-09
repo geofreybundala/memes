@@ -11,11 +11,11 @@ export default class header extends Component {
         <div className="row">
           <div className="col-sm-12">
             <ul className="social-network">
-              <li><a className="waves-effect waves-dark" href="#"><i className="fa fa-facebook"></i></a></li>
-              <li><a className="waves-effect waves-dark" href="#"><i className="fa fa-twitter"></i></a></li>
-              <li><a className="waves-effect waves-dark" href="#"><i className="fa fa-linkedin"></i></a></li>
-              <li><a className="waves-effect waves-dark" href="#"><i className="fa fa-pinterest"></i></a></li>
-              <li><a className="waves-effect waves-dark" href="#"><i className="fa fa-google-plus"></i></a></li>
+              <li><a className="waves-effect waves-dark" href><i className="fa fa-facebook"></i></a></li>
+              <li><a className="waves-effect waves-dark" href><i className="fa fa-twitter"></i></a></li>
+              <li><a className="waves-effect waves-dark" href><i className="fa fa-linkedin"></i></a></li>
+              <li><a className="waves-effect waves-dark" href><i className="fa fa-pinterest"></i></a></li>
+              <li><a className="waves-effect waves-dark" href><i className="fa fa-google-plus"></i></a></li>
             </ul>
           </div>
 
@@ -24,7 +24,7 @@ export default class header extends Component {
   </header>
   <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
     <div className="container">
-      <a className="navbar-brand"> MEMES</a>
+      <a className="navbar-brand" href> memeHub</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -33,23 +33,23 @@ export default class header extends Component {
         <ul className="navbar-nav ml-auto">
 
           <li className="nav-item active">
-            <a className="nav-link">Home
+            <Link className="nav-link" to="/">Home
               <span className="sr-only">(current)</span>
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="#">memes</a>
+            <Link className="nav-link" to="memes">memes</Link>
           </li>
 
          <li className="nav-item">
-            <a className="nav-link" href="#">About Us</a>
+            <a className="nav-link" href>About Us</a>
           </li>
 
         
 
           <li className="nav-item">
-            <a className="nav-link" href="#">Contact</a>
+            <a className="nav-link" href>Contact</a>
           </li>
         </ul>
       </div>

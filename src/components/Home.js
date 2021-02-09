@@ -10,7 +10,7 @@ import {randomAction} from '../actions'
 const Home = (props) => {
     useEffect(()=>{
         props.randomAction()
-    },[])
+    })
 
   const joke= props.meme?props.meme.joke:''
   const loader = joke?'none':'block'
