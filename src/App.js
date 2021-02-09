@@ -1,12 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import Home from './components/home';
+import Home from './components/Home';
 
-// const URL_BA='';
-
-// state = {
-//         rondoms:[]
-//        }
 class App extends React.Component {
 
 
