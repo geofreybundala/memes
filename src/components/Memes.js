@@ -130,20 +130,52 @@ import {allMemeAction} from '../actions'
 
 
 const Memes = (props) => {
+
+  const handlePageChange=()=>{
+
+  }
+
 useEffect(()=>{
   props.allMemeAction()
 },[])
+
+const {currect_page} =props
+const memes= props.memes?props.memes.results:[]
+const memesList =memes.map(meme=>
+  <div className="col-md-6" key={meme.id}>
+  <div className="card mb-2">
+  <div className="p-3">
+    <p className="card-text p-2">{meme.joke}</p>
+  </div>
+  </div>
+  </div>
+)
+
+
   return (
     <div>
-         <Header/>
-      show all memes
+      <Header/>
+        <div className="row memes_card ">
+           {memesList}
+        </div>
+         <div className="d-flex justify-content-center">
+             <Pagination
+             activePage={currect_page}
+             itemsCountPerPage={20}
+             totalItemsCount={450}
+             pageRangeDisplayed={7}
+             onChange={handlePageChange}
+             itemClass='page-item'
+             linkClass='page-link'
+             />
+           </div>
     </div>
   )
 }
 
 const mapStateToProps =state =>{
-  console.log(state.memes)
-  return {memes:state.memes}
+  console.log(state.memes[0])
+  return {memes:state.memes[0]}
 }
 
 export default connect(mapStateToProps,{allMemeAction})(Memes)
