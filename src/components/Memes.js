@@ -131,13 +131,14 @@ import {allMemeAction} from '../actions'
 
 const Memes = (props) => {
 
-  const handlePageChange=()=>{
+  const handlePageChange=(pageNumber)=>{
+    props.allMemeAction(pageNumber)
 
   }
 
 useEffect(()=>{
   props.allMemeAction()
-},[])
+})
 
 const {currect_page} =props
 const memes= props.memes?props.memes.results:[]
@@ -174,7 +175,6 @@ const memesList =memes.map(meme=>
 }
 
 const mapStateToProps =state =>{
-  console.log(state.memes[0])
   return {memes:state.memes[0]}
 }
 
