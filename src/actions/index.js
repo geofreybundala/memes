@@ -11,7 +11,6 @@ export const randomAction =()=>{
 export const allMemeAction=(page=1)=>{
         return async dispatch=>{
             const response = await memesAPIs.get(`/search?page=${page}`)
-            console.log(response.data)
             dispatch({type:'GET_MEMES',payload:response.data})
         }
 }

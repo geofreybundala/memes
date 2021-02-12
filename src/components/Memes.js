@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Header from './header';
 import Footer from './footer';
 import Pic from './../assets/images/back6.jpg';
@@ -6,6 +6,7 @@ import DotLoader from "react-spinners/DotLoader";
 import Pagination from "react-js-pagination";
 import {connect} from 'react-redux'
 import {allMemeAction} from '../actions'
+import Skeleton from 'react-loading-skeleton';
 
 
 // export default class Memes extends React.Component {
@@ -136,9 +137,11 @@ const Memes = (props) => {
 
   }
 
+
+
 useEffect(()=>{
   props.allMemeAction()
-})
+},[])
 
 const {currect_page} =props
 const memes= props.memes?props.memes.results:[]
@@ -153,13 +156,17 @@ const memesList =memes.map(meme=>
 )
 
 
+const loader = memes.length!==20?'block':'none'
+const content =memes.length!==20?'none':'block'
+
   return (
     <div>
       <Header/>
+      <div style={{ display:`${content}` }}>
         <div className="row memes_card ">
            {memesList}
         </div>
-         <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center">
              <Pagination
              activePage={currect_page}
              itemsCountPerPage={20}
@@ -169,7 +176,14 @@ const memesList =memes.map(meme=>
              itemClass='page-item'
              linkClass='page-link'
              />
-           </div>
+        </div>
+      </div>
+      <div style={{ display:`${loader}` }}>
+      
+                 <div className='container-fluid memes_card'>
+                 <Skeleton count={15}/>
+                 </div>
+      </div>
     </div>
   )
 }
