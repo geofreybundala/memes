@@ -20,13 +20,14 @@ const [pageNumber,setPageNumber]=useState(1)
  useEffect(()=>{
   props.allMemeAction()
 },[])
-var memes =[]
+let memes =[]
+
 if(props.memes){
  let mm= props.memes
    const  result = mm.find(meme=>meme.current_page===pageNumber)
    memes = result?result.results:[];
 }
-const {currect_page} =props
+
 const memesList =memes.map(meme=>
   <div className="col-md-6" key={meme.id}>
   <div className="card mb-2">
@@ -50,7 +51,7 @@ const content =memes.length!==20?'none':'block'
         </div>
         <div className="d-flex justify-content-center">
              <Pagination
-             activePage={currect_page}
+             activePage={pageNumber}
              itemsCountPerPage={20}
              totalItemsCount={450}
              pageRangeDisplayed={7}
@@ -61,7 +62,6 @@ const content =memes.length!==20?'none':'block'
         </div>
       </div>
       <div style={{ display:`${loader}` }}>
-      
                  <div className='container-fluid memes_card'>
                  <Skeleton count={15}/>
                  </div>
